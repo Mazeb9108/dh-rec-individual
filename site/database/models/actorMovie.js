@@ -4,10 +4,9 @@ module.exports = (sequelize, DataTypes) => {
         {
             screentime: DataTypes.INTEGER(10),
         },
-        {
-            tableName: "actor_movie",
-        }
+        { tableName: "actormovie", }
     );
+
 
     return ActorMovie;
 };

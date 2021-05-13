@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-    const ActorEpisode = sequelize.define(
+    const ActorSerie = sequelize.define(
         "ActorEpisode",
         {
             screentime: DataTypes.INTEGER(10),
@@ -9,5 +9,5 @@ module.exports = (sequelize, DataTypes) => {
         }
     );
 
-    return ActorEpisode;
+    return ActorSerie;
 };

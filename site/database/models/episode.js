@@ -10,11 +10,21 @@ module.exports = (sequelize, DataTypes) => {
         },
         { tableName: "episodes" }
     );
-    Serie.associate = function (models) {
-        Serie.belongsToMany(models.Actor, {
+    Episode.associate = function (models) {
+
+        Episode.belongsTo(models.Season, {
+            as: "seasons",
+            foreignKey: "seasonId"
+
+        
+        });
+
+        Episode.belongsToMany(models.Actor, {
             as: "actors",
-            through: models.ActorEpisode,
+            through: "actorepisode",
             foreignKey: "episodeId",
+            otherKey: "actorId",
+            timestamp: false
         });
     };
     return Episode;
