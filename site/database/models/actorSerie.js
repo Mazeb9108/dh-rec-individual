@@ -1,11 +1,11 @@
 module.exports = (sequelize, DataTypes) => {
     const ActorSerie = sequelize.define(
-        "ActorEpisode",
+        "ActorSerie",
         {
             screentime: DataTypes.INTEGER(10),
         },
         {
-            tableName: "actorepisode",
+            tableName: "actorSerie",
         }
     );
 
