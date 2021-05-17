@@ -13,18 +13,14 @@ module.exports = (sequelize, DataTypes) => {
     Episode.associate = function (models) {
 
         Episode.belongsTo(models.Season, {
-            as: "seasons",
-            foreignKey: "seasonId"
-
-        
+            as: "seasons"
         });
 
         Episode.belongsToMany(models.Actor, {
             as: "actors",
             through: "actorepisode",
             foreignKey: "episodeId",
-            otherKey: "actorId",
-            timestamp: false
+           
         });
     };
     return Episode;

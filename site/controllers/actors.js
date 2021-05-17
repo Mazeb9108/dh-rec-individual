@@ -1,4 +1,4 @@
-const { Movie, Genre, Actor, ActorMovie } = require("../database/models");
+const { Movie, Genre, Actor, ActorMovie, Serie, Season, Episode, ActorEpisode } = require("../database/models");
 const actorService = require("../services/actorService");
 
 module.exports = {

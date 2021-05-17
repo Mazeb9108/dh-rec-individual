@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
         {
             title: DataTypes.STRING,
             releaseDate: DataTypes.DATE,
-            revenue: DataTypes.NUMBER,
+            revenue: DataTypes.DECIMAL,
             awards: DataTypes.INTEGER(11).UNSIGNED,
             coverArt: DataTypes.STRING
 

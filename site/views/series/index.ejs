@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<% const title = "Series List" %>
+
+<head>
+    <%- include("../partials/head.ejs", {title}) %>
+</head>
+
+<body>
+    <%- include("../components/page-breadcrumb",{breadcrumbs:[{name:"Home",url:"/"}]}) %>
+    <div class="container mt-5">
+        <%- include("../components/page-title.ejs", {title}) %>
+
+        <div class="d-flex justify-content-end">
+            <%- include("../components/buttonLink", {data:{label: "New", link: "/series/create"}}) %>
+        </div>
+
+        <%- include("../components/linkList.ejs", {entityList: series, entityComponent: "../components/movieLink", emptyMessage: "No series found" }) %>
+    </div>
+</body>
+
+</html>

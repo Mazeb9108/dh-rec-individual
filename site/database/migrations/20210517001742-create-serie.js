@@ -15,7 +15,7 @@ module.exports = {
         type: Sequelize.DATE
       },
       renevue: {
-        type: Sequelize.STRING
+        type: Sequelize.DECIMAL
       },
       awards: {
         type: Sequelize.INTEGER

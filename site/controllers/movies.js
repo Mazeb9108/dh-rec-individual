@@ -1,4 +1,4 @@
-const { Movie, Genre, Actor, Sequelize } = require("../database/models");
+const { Movie, Genre, Actor, ActorMovie, Serie, Season, Episode, ActorEpisode, Sequelize } = require("../database/models");
 const Op = Sequelize.Op;
 
 //Mapea la lista para que sea simple de mostrar el select

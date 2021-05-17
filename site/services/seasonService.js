@@ -2,13 +2,13 @@ const { Movie, Genre, Actor, ActorMovie, Serie, Season, Episode, ActorEpisode } 
 
 module.exports = {
     findOne: async (id) => {
-        return await Genre.findByPk(id, {
-            include: ["movies","series"],
+        return await Season.findByPk(id, {
+            include: ["series"]
         });
     },
     findAll: async () => {
-        return await Genre.findAll({
-            include: ["movies","series"],
+        return await Season.findAll({
+            include: ["series"]
         });
     },
 };

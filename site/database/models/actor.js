@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
         {
             firstName: DataTypes.STRING,
             lastName: DataTypes.STRING,
-            rating: DataTypes.DECIMAL(3,1),
+            rating: DataTypes.FLOAT(3,1),
             profilePic: DataTypes.STRING,
             
         },
@@ -15,40 +15,22 @@ module.exports = (sequelize, DataTypes) => {
     Actor.associate = function (models) {
         Actor.belongsTo(models.Movie, {
             as: "favoriteMovie",
-            foreignKey: "favoriteMovieId",
+            foreignKey: "favoriteMovieId"
         });
         Actor.belongsToMany(models.Movie, {
             as: "movies",
             through: models.ActorMovie,
             foreignKey: "actorId",
         });
-   /*  Actor.associate = function (models) {
-        Actor.belongsTo(models.Movie, {
-            as: "favoriteMovie",
-            foreignKey: "favoriteMovieId",
-        });
+        
+    
         Actor.belongsToMany(models.Episode, {
             as: "episodes",
-            through: "actorEpisode",
+            through: models.ActorEpisode,
             foreignKey: "actorId",
-            otherKey: "episodeId",
-            timestamp: false
+            
         });
-          
-        Actor.belongsToMany(models.Movie, {
-            as: "movies",
-            through: models.actorMovie,
-            foreignKey: "actorId",
         
-        });
-        Actor.belongsToMany(models.Serie, {
-            as: "series",
-            through: models.actorSerie,
-            foreignKey: "actorId",
-            otherKey: "serieId",
-            timestamp: false
-        });
-    }; */
-    }
+    };
     return Actor;
 };
