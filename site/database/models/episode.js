@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
             title: DataTypes.STRING,
             releaseDate: DataTypes.DATE,
             length: DataTypes.INTEGER(10).UNSIGNED,
-            rating: DataTypes.STRING
+            rating: DataTypes.DECIMAL(3,1)
         },
         { tableName: "episodes" }
     );

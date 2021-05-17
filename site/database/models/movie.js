@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
         "Movie",
         {
             title: DataTypes.STRING,
-            movieAwards: DataTypes.INTEGER(10).UNSIGNED,
+            awards: DataTypes.INTEGER(10).UNSIGNED,
             revenue: DataTypes.STRING,
             releaseDate: DataTypes.DATE,
             length: DataTypes.INTEGER(10).UNSIGNED,
@@ -14,19 +14,14 @@ module.exports = (sequelize, DataTypes) => {
     );
     Movie.associate = function (models) {
         Movie.belongsTo(models.Genre, {
-            as: "genres",
-            foreignKey: "genreId"
+            as: "genre",
         });
-    
-    Movie.associate = function (models) {
         Movie.belongsToMany(models.Actor, {
             as: "actors",
-            through: "actorMovie",
+            through: models.ActorMovie,
             foreignKey: "movieId",
-            otherKey: "actorId",
-            timestamp: false
         });
     };
-    };
+    
     return Movie;
 };

@@ -4,9 +4,7 @@ module.exports = (sequelize, DataTypes) => {
         "Season",
         {
             title: DataTypes.STRING,
-            maxRating: DataTypes.STRING,
-            releaseDate: DataTypes.STRING,
-            endDate: DataTypes.STRING
+            rating: DataTypes.DECIMAL(3,1),
         },
         { tableName: "seasons" }
     );
