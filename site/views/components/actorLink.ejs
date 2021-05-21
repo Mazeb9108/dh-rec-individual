@@ -2,10 +2,10 @@
 
 <a href="/actors/<%= actor.id %>">
     <%= `${actor.firstName} ${actor.lastName}` %>
-    <% if (actor.ActorMovie) { %>
-    (<%= actor.ActorMovie.screenTime ? moment.duration(actor.ActorMovie.screenTime).humanize() : "N/A" %>)
+    <% if (actor.ActorEpisode) { %>
+    (<%= actor.ActorEpisode.screenTime ? moment.duration(actor.ActorEpisode.screenTime).humanize() : "N/A" %>)
     <% } else {  %>
-    (<%= actor.movies.length %>)
+    (<%= actor.episodes.length %>)
     <% }  %>
 
 </a>

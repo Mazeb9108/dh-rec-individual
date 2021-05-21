@@ -4,26 +4,13 @@ module.exports = (sequelize, DataTypes) => {
         "Serie",
         {
             title: DataTypes.STRING,
-            releaseDate: DataTypes.DATE,
-            revenue: DataTypes.DECIMAL,
-            awards: DataTypes.INTEGER(11).UNSIGNED,
             coverArt: DataTypes.STRING
 
         },
         { tableName: "series" }
     );
     Serie.associate = function (models) {
-        Serie.belongsTo(models.Genre, {
-            as: "genres",
-            foreignKey: "genreId"
-        });
-        Serie.belongsToMany(models.Actor, {
-            as: "actors",
-            through: "actorserie",
-            foreignKey: "serieId",
-            otherKey: "actorId",
-            timestamp: false
-        });
+       Serie.hasMany(models.Season, { as: "seasons" });
     };
     return Serie;
 };

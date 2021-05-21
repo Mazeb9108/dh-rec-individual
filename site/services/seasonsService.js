@@ -1,4 +1,4 @@
-const { Movie, Genre, Actor, ActorMovie, Serie, Season, Episode, ActorEpisode } = require("../database/models");
+const { Actor,Serie, Season, Episode, ActorEpisode } = require("../database/models");
 
 module.exports = {
     findOne: async (id) => {

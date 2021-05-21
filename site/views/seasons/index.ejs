@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<% const title = "Series List" %>
+<% const title = "Seasons List" %>
 
 <head>
     <%- include("../partials/head.ejs", {title}) %>
@@ -13,10 +13,10 @@
         <%- include("../components/page-title.ejs", {title}) %>
 
         <div class="d-flex justify-content-end">
-            <%- include("../components/buttonLink", {data:{label: "New", link: "/series/create"}}) %>
+            <%- include("../components/buttonLink", {data:{label: "New", link: "/seasons/create"}}) %>
         </div>
 
-        <%- include("../components/linkList.ejs", {entityList: series, entityComponent: "../components/serieLink", emptyMessage: "No series found" }) %>
+        <%- include("../components/linkList.ejs", {entityList: seasons, entityComponent: "../components/seasonLink", emptyMessage: "No movies found" }) %>
     </div>
 </body>
 

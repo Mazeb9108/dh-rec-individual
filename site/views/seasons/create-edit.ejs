@@ -7,13 +7,13 @@
 
 <% 
     let data; 
-    if(serie){
-        data = serie;
-        data.url = `/series/${serie.id}?_method=PATCH`
+    if(season){
+        data = season;
+        data.url = `/seasons/${season.id}?_method=PATCH`
     }else{
         data = {
-            name: "",
-            url: "/series",
+            title: "",
+            url: "/seasons",
         }
     }
 %>
@@ -22,10 +22,10 @@
     <% 
         const breadcrumbs = [
             {name:"Home",url:"/"},
-            {name:"Series",url:"/series"}
+            {name:"Seasons",url:"/seasons"}
         ]
         if (data.id){
-            breadcrumbs.push({name: (data.title), url:`/series/${data.id}`})
+            breadcrumbs.push({title: (data.title), url:`/seasons/${data.id}`})
         }
     %>
     <%- include("../components/page-breadcrumb",{breadcrumbs}) %>
@@ -34,9 +34,9 @@
         <%- include("../components/page-title", {title: data.title }) %>
 
         <form action="<%= data.url %>" method="POST">
-           <%- include("../components/form-input", { data:{label: "Title", name:"title", type:"text", value:data.title} }) %>
-            <%- include("../components/form-imageLink", {data:{label: "Cover Art", name:"coverArt", value:data.coverArt }}) %>
-            
+            <%- include("../components/form-input", { data:{label: "Title", name:"title", type:"text", value:data.title} }) %>
+            <%- include("../components/form-input", { data:{label: "Rating", name:"rating", type:"text", value:data.rating} }) %>
+
             <%- include("../components/form-button", {data: {label: "Submit", type: "submit"}}) %>
         </form>
     </div>

@@ -27,13 +27,13 @@
                 <%- include("../components/detailLabel", {labelName:"Length",labelText: moment.duration(movie.length, 'minutes').humanize() }) %>
 
                 <%- include("../components/page-subtitle", {title: "Actors"}) %>
-                <%- include("../components/linkList", {entityList: movie.actors, entityComponent: "../components/actorLink", emptyMessage: "No actors recorded" }) %>
+                <%- include("../components/linkList", {entityList: episode.actors, entityComponent: "../components/actorLink", emptyMessage: "No actors recorded" }) %>
             </div>
 
             <div class="col-2">
                 <%- include("../components/page-subtitle", {title: "Actions"}) %>
-                <%- include("../components/buttonLink", {data: {label: "Edit", classes:"btn-primary", link: `/movies/${movie.id}/edit`}}) %>
-                <%- include("../components/buttonForm", {title: "Delete", classes:"btn-danger", link: `/movies/${movie.id}`, method:"DELETE"}) %>
+                <%- include("../components/buttonLink", {data: {label: "Edit", classes:"btn-primary", link: `/episodes/${episode.id}/edit`}}) %>
+                <%- include("../components/buttonForm", {title: "Delete", classes:"btn-danger", link: `/episodes/${episode.id}`, method:"DELETE"}) %>
             </div>
 
         </div>

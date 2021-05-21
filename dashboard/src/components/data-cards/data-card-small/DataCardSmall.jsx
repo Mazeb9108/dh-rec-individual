@@ -19,9 +19,6 @@ export default function DataCardSmall(props) {
                             </div>
                         </div>
                         <div className="col-auto">
-                            <i
-                                className={`fas ${props.icon} fa-2x text-gray-300`}
-                            ></i>
                         </div>
                     </div>
                 </div>

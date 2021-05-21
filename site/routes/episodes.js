@@ -10,5 +10,9 @@ router.get("/create", episodesController.showCreate);
 router.post("/", episodesController.create);
 router.get("/:id", episodesController.detail);
 
+router.post("/:id/actor", episodesController.addActor);
+router.patch("/:id/actor/:actorId", episodesController.updateActor);
+router.delete("/:id/actor/:actorId", episodesController.removeActor);
+
 
 module.exports = router;

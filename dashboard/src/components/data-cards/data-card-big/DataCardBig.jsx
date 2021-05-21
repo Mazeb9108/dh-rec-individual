@@ -6,7 +6,7 @@ export default function DataCardBig(props) {
             <div className="card shadow mb-4">
                 <div className="card-header py-3">
                     <h6 className="m-0 font-weight-bold text-primary">
-                        Last product in Data Dase
+                        Descripción del Episodio
                     </h6>
                 </div>
                 <div className="card-body">

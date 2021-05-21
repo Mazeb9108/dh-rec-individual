@@ -10,4 +10,5 @@ router.get("/create", seriesController.showCreate);
 router.post("/", seriesController.create);
 router.get("/:id", seriesController.detail);
 
+
 module.exports = router;

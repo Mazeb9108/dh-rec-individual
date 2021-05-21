@@ -11,29 +11,17 @@ class App extends Component {
         this.state = {
             smallCardsValues: [
                 {
-                    title: "Products in Data Base",
+                    title: "Actores",
                     value: "n/a",
                     color: "primary",
-                    icon: "fa-clipboard-list",
                 },
-                {
-                    title: "Amount in products",
-                    value: "n/a",
-                    color: "success",
-                    icon: "fa-dollar-sign",
-                },
-                {
-                    title: "Users quantity",
-                    value: "n/a",
-                    color: "warning",
-                    icon: "fa-user-check",
-                },
+                
             ],
         };
     }
-    async queryProductsAPI(endpoint) {
+    async queryActorsAPI(endpoint) {
         const response = await fetch(
-            `http://localhost:3000/api/products/${endpoint}`
+            `http://localhost:3000/api/actors/${endpoint}`
         );
         return await response.json();
     }
@@ -60,23 +48,11 @@ class App extends Component {
     async updateData() {
         const smallCardsValues = [
             {
-                title: "Products in Data Base",
+                title: "Actores",
                 value: (await this.getProductsCount()).toString(),
-                color: "primary",
-                icon: "fa-clipboard-list",
+                color: "primary"
             },
-            {
-                title: "Amount in products",
-                value: "$ " + (await this.getProductsTotalPrice()).toString(),
-                color: "success",
-                icon: "fa-dollar-sign",
-            },
-            {
-                title: "Users quantity",
-                value: (await this.getUsersCount()).toString(),
-                color: "warning",
-                icon: "fa-user-check",
-            },
+            
         ];
 
         this.setState({
@@ -103,7 +79,7 @@ class App extends Component {
                             <div className="container-fluid">
                                 <div className="d-sm-flex align-items-center justify-content-between mb-4">
                                     <h1 className="h3 mb-0 text-gray-800">
-                                        App Dashboard
+                                        Título del Episodio
                                     </h1>
                                 </div>
                                 <div className="row">
@@ -114,7 +90,6 @@ class App extends Component {
                                                     key={index}
                                                     title={elem.title}
                                                     value={elem.value}
-                                                    icon={elem.icon}
                                                     color={elem.color}
                                                 />
                                             );
@@ -122,7 +97,6 @@ class App extends Component {
                                     )}
                                 </div>
                                 <div className="row">
-                                    <DataCardBig />
                                     <DataCardBig />
                                 </div>
                             </div>

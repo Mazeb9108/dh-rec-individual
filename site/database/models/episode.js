@@ -11,9 +11,11 @@ module.exports = (sequelize, DataTypes) => {
         { tableName: "episodes" }
     );
     Episode.associate = function (models) {
+        Season.belongsTo(models.Serie, {
+            as: "seasons",
+            foreignKey: "seasonId"
 
-        Episode.belongsTo(models.Season, {
-            as: "seasons"
+        
         });
 
         Episode.belongsToMany(models.Actor, {

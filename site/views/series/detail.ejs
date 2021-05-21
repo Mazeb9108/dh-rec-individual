@@ -4,33 +4,30 @@
 <% const title = "Serie Details" %>
 
 <head>
-    <%- include("../partials/head.ejs",{title}) %>
+    <%- include("../partials/head.ejs", {title}) %>
 </head>
 
 <body>
     <%- include("../components/page-breadcrumb",{breadcrumbs:[{name:"Home",url:"/"},{name:"Series",url:"/series"}]}) %>
-
     <div class="container mt-5">
-
-        <%- include("../components/page-title", {title: serie.title }) %>
-
+        <%- include("../components/page-title.ejs", {title}) %>
         <div class="row">
             <div style="height: 500px;">
-                <img style="height: 500px;" src="<%= serie.cover_art %>" alt="">
+                <img style="height: 500px;" src="<%= serie.coverArt %>" alt="">
             </div>
 
+            <div class="col">
+                <%- include("../components/detailLabel.ejs", {labelName:"Title",labelText: serie.title }) %>
 
-
+                <%- include("../components/page-subtitle.ejs", {title: "Seasons"}) %>
+                <%- include("../components/linkList.ejs", {entityList: serie.seasons, entityComponent: "../components/seasonLink", emptyMessage: "No seasons recorded" }) %>
+            </div>
             <div class="col-2">
                 <%- include("../components/page-subtitle", {title: "Actions"}) %>
-                <%- include("../components/buttonLink", {data: {label: "Edit", classes:"btn-primary", link: `/series/${serie.id}/edit`}}) %>
+                <%- include("../components/buttonLink", {data:{label: "Edit", classes:"btn-primary", link: `/series/${serie.id}/edit`}}) %>
                 <%- include("../components/buttonForm", {title: "Delete", classes:"btn-danger", link: `/series/${serie.id}`, method:"DELETE"}) %>
             </div>
-
         </div>
-
-
-
     </div>
 </body>
 
