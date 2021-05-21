@@ -21,7 +21,7 @@ class App extends Component {
     }
     async queryActorsAPI(endpoint) {
         const response = await fetch(
-            `http://localhost:3000/api/actors/${endpoint}`
+            `http://localhost:3000/api/products/${endpoint}`
         );
         return await response.json();
     }
