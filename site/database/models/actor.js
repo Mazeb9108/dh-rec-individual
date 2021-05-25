@@ -5,14 +5,19 @@ module.exports = (sequelize, DataTypes) => {
         {
             firstName: DataTypes.STRING,
             lastName: DataTypes.STRING,
+            rating: DataTypes.FLOAT(3, 1),
             profilePic: DataTypes.STRING,
         },
         { tableName: "actors" }
     );
     Actor.associate = function (models) {
-        Actor.belongsToMany(models.Episode, {
-            as: "episodes",
-            through: models.ActorEpisode,
+        Actor.belongsTo(models.Movie, {
+            as: "favoriteMovie",
+            foreignKey: "favoriteMovieId",
+        });
+        Actor.belongsToMany(models.Movie, {
+            as: "movies",
+            through: models.ActorMovie,
             foreignKey: "actorId",
         });
     };

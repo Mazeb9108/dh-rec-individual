@@ -2,13 +2,13 @@ const { Movie, Genre, Actor, ActorMovie } = require("../database/models");
 
 module.exports = {
     findOne: async (id) => {
-        return await Actor.findByPk(id, {
-            include: ["movies"],
+        return await Movie.findByPk(id, {
+            include: ["actors", "genre"],
         });
     },
     findAll: async () => {
-        return await Actor.findAll({
-            include: ["movies"],
+        return await Movie.findAll({
+            include: ["actors", "genre"],
         });
     },
 };
